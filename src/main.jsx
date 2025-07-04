@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import Wishes from "./assets/pages/Wishes.jsx";
-import Gallery from "./assets/pages/Gallery.jsx";
 import "./App.css"
 import Header from "./assets/components/Header.jsx";
 
