@@ -7,7 +7,7 @@ export default function Gallery() {
     const [images, setImages] = useState([]);    
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/wishes")
+        axios.get("https://birthday-backend-494w.onrender.com/api/wishes")
         .then(res => {
             const images = res.data
                 .filter(wish => wish.imageUrl)
