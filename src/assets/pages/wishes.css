@@ -1,0 +1,105 @@
+.wishes-container {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(108,46,183,0.08);
+    max-width: 480px;
+    margin: 2rem auto 1.5rem auto;
+    text-align: center;
+}
+
+.wishes-container h2 {
+    color: #6c2eb7;
+    margin-bottom: 1.5rem;
+}
+
+.wishes-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wishes-container input,
+.wishes-container textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0d7ff;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.wishes-container input:focus,
+.wishes-container textarea:focus {
+    border: 1.5px solid #6c2eb7;
+}
+
+.wishes-container button {
+    background: #6c2eb7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.wishes-container button:hover {
+    background: #4e1e8a;
+    transform: scale(1.05);
+}
+
+.fetched-wishes {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    background: #faf8ff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 16px rgba(108,46,183,0.06);
+}
+
+.fetched-wishes h2 {
+    color: #6c2eb7;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.wish-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wish-item {
+    background: #e0d7ff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 1px 4px rgba(108,46,183,0.06);
+    word-break: break-word;
+}
+
+.wish-image {
+    max-width: 120px;
+    max-height: 120px;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(108,46,183,0.10);
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}

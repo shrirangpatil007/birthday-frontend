@@ -1,0 +1,21 @@
+.gallery-wall {
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-item p {
+  margin-top: 5px;
+  font-weight: bold;
+}
