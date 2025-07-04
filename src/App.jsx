@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <div className="homepage">
-      <img className="homepage-image" src={Ravi_image} alt="Ravi_image" />
+      <img className="homepage-image" src="https://github.com/shrirangpatil007/birthday-frontend/blob/main/src/assets/Images/Ravi_image.jpg?raw=true" alt="Ravi_image" />
       <CountdownButton />
     </div>
   );
