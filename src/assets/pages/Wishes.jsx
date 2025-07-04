@@ -10,7 +10,7 @@ export default function Wishes() {
     const [formData, setFormData] = useState({ name: "", message: "", image: null });
 
     useEffect(() => {
-        axios.get("https://birthday-backend-494w.onrender.com/api/wishes")
+        axios.get(`${API_BASE_URL}api/wishes`)
             .then(res => setWishes(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -33,7 +33,7 @@ export default function Wishes() {
             data.append("image", formData.image);
         }
 
-        axios.post("https://birthday-backend-494w.onrender.com/api/wishes", data)
+        axios.post(`${API_BASE_URL}api/wishes`, data)
             .then(res => {
                 setWishes(prev => [...prev, res.data]);
                 setFormData({ name: "", message: "", image: null });
@@ -94,6 +94,3 @@ export default function Wishes() {
 }
 
 
-// cloudinary.cloud_name=dtrombfbc
-// cloudinary.api_key =444873443248583
-// cloudinary.api_secret =bkPnT3qqcZAUpEbrvDjqh62pNpU
