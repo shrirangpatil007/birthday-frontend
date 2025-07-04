@@ -7,12 +7,15 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 export default function Wishes() {
     const [wishes, setWishes] = useState([]);
     const [successMsg, setSuccessMsg] = useState("")
+    const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({ name: "", message: "", image: null });
 
     useEffect(() => {
+        setLoading(true);
         axios.get(`${API_BASE_URL}api/wishes`)
             .then(res => setWishes(res.data))
-            .catch(err => console.error(err));
+            .catch(err => console.error(err))
+            .finally(() => setLoading(false));
     }, []);
 
     function handleChange(e) {
@@ -76,18 +79,24 @@ export default function Wishes() {
 
             <div className="fetched-wishes">
                 <h2>All Wishes</h2>
-                <ul className="wish-list">
-                    {wishes.map(wish => (
-                        <li className="wish-item" key={wish.id}>
-                            <strong>{wish.name}</strong>: {wish.message}
-                            {wish.imageUrl && (
-                                <div>
-                                    <img src={wish.imageUrl} alt="Wish" className="wish-image" />
-                                </div>
-                            )}
-                        </li>
-                    ))}
-                </ul>
+                {loading ? (
+                    <div className="spinner"></div>    
+                ) : (
+                    <ul className="wish-list">
+                        {wishes.map(wish => (
+                            <li className="wish-item" key={wish.id}>
+                                <strong>{wish.name}</strong>: {wish.message}
+                                {wish.imageUrl && (
+                                    <div>
+                                        <img src={wish.imageUrl} alt="Wish" className="wish-image" />
+                                    </div>
+                                )}
+                            </li>
+                        ))}
+                     </ul>
+                )
+                }
+                
             </div>
         </>
     );
