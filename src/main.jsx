@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import "./App.css"
 import Header from "./assets/components/Header.jsx";
+import Wishes from "./assets/pages/Wishes.jsx";
+import Gallery from "./assets/pages/Gallery.jsx";
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
