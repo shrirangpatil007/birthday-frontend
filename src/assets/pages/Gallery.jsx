@@ -21,7 +21,9 @@ export default function Gallery() {
         <div className="gallery-wall">
             <h2>Gallery Wall 🖼️</h2>
             {loading ? (
-                <div className="spinner"></div>
+                <div className="spinner">
+                    <p>Waking up the server... ⏳ It may take upto few minutes</p>
+                </div>
                 ): (
                 <div className="gallery-grid">
                     {images.map((img, index) => (

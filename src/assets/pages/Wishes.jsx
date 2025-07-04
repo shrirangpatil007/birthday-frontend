@@ -79,7 +79,9 @@ export default function Wishes() {
             <div className="fetched-wishes">
                 <h2>All Wishes</h2>
                 {loading ? (
-                    <div className="spinner"></div>    
+                    <div className="spinner">
+                        <p>Waking up the server... ⏳ It may take upto few minutes</p>
+                    </div>    
                 ) : (
                     <ul className="wish-list">
                         {wishes.map(wish => (
