@@ -33,7 +33,7 @@ export default function Wishes() {
             data.append("image", formData.image);
         }
 
-        axios.post(https://birthday-backend-494w.onrender.com/api/wishes", data)
+        axios.post("https://birthday-backend-494w.onrender.com/api/wishes", data)
             .then(res => {
                 setWishes(prev => [...prev, res.data]);
                 setFormData({ name: "", message: "", image: null });
