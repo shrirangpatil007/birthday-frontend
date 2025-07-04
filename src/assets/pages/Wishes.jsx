@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./wishes.css";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export default function Wishes() {
     const [wishes, setWishes] = useState([]);
@@ -10,7 +10,7 @@ export default function Wishes() {
     const [formData, setFormData] = useState({ name: "", message: "", image: null });
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}api/wishes`)
+        axios.get("https://birthday-backend-494w.onrender.com/api/wishes")
             .then(res => setWishes(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -33,7 +33,7 @@ export default function Wishes() {
             data.append("image", formData.image);
         }
 
-        axios.post(`${API_BASE_URL}api/wishes`, data)
+        axios.post(https://birthday-backend-494w.onrender.com/api/wishes", data)
             .then(res => {
                 setWishes(prev => [...prev, res.data]);
                 setFormData({ name: "", message: "", image: null });
